@@ -1,34 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Emotion Mongo
 
-## Getting Started
+Experimenting with styled components using Emotion in react.
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Authentication
+- Authorization
+- Access control
+- Cookie-based sessions
+- Database with user information
+- Data validation
+- File uploads
+- Image optimization
+- Error handling
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Key Technologies:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Emotion: A library designed for writing css styles with JavaScript.
+- MongoDB: Document-oriented database classified as NoSql.
+- Next.js: An open-source React front-end development web framework.
+- React Query: Performant and powerful data synchronization for React.
 
-## Learn More
+<br/>
 
-To learn more about Next.js, take a look at the following resources:
+### Requirements:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- MongoDB Version 4.x
+- Node.js Version 16.x
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br/>
 
-## Deploy on Vercel
+### NPM Scripts:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In the root directory, you can run:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- npm run build: builds the application for production.
+- npm run dev: starts the application in development mode.
+- npm start: starts the application in production mode.
+
+<br/>
+
+## Usage:
+
+### Environment Variables:
+
+Setup environment variables by creating .env.development.local file in the root directory. An example of this file is provided called .env.local.example. Note that in production you would want to set up environment variables on the host server.
+
+<br />
+
+### Setup:
+
+In the root directory use `npm ci` to install dependencies.
+
+<br/>
+
+### Development:
+
+Use `npm run dev` to run the application in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+<br/>
+
+### Production:
+
+Use `npm run build` to build the app for production. Then use `npm start` to start the application in production mode.

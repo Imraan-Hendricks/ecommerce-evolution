@@ -1,7 +1,13 @@
 {
   "name": "next-emotion-mongo",
   "version": "0.1.0",
+  "author": "Imraan-Hendricks",
+  "description": "Experimenting with styled components using Emotion in react",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Imraan-Hendricks/next-emotion-mongo"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
