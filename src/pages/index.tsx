@@ -1,9 +1,10 @@
+import { Demo } from '../modules/demo/Demo';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => (
-  <div>
-    <h1>App</h1>
-  </div>
+  <main>
+    <Demo />
+  </main>
 );
 
 export default Home;

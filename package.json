@@ -1,6 +1,6 @@
 {
   "name": "next-emotion-mongo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Imraan-Hendricks",
   "description": "Experimenting with styled components using Emotion in react",
   "private": true,
@@ -15,11 +15,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.2",
     "@types/node": "18.7.17",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
