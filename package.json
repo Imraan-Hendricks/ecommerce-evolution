@@ -1,6 +1,6 @@
 {
   "name": "next-emotion-mongo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Imraan-Hendricks",
   "description": "Experimenting with styled components using Emotion in react",
   "private": true,
