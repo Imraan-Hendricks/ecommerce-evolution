@@ -1,5 +1,13 @@
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 export const breakpoints = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
+export const breakpoint = {
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+  '2xl': 1400,
+};
 
 export type Color =
   | 'primary'
