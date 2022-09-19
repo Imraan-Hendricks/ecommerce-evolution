@@ -1,9 +1,9 @@
-import { Demo } from '../modules/demo/Demo';
+import { Hero } from '../modules/marketing/Hero';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => (
   <main>
-    <Demo />
+    <Hero />
   </main>
 );
 

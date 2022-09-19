@@ -8,7 +8,7 @@ import { Typography } from '../../components/Typography';
 export const Palette: FC = () => (
   <Box as='section' css={{ padding: '5rem 1.25rem' }}>
     <Container>
-      <Typography as='h1' variant='h4' css={{ marginBottom: '1.75rem' }}>
+      <Typography as='h1' variant='h4' css={{ marginBottom: '2rem' }}>
         Colors
       </Typography>
       <Gallery>
