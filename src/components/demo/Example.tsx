@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Box } from '../../components/Box';
+import { Box } from '../ui/Box';
 import { Color } from '../../theme/types';
-import { Container } from '../../components/Container';
+import { Container } from '../ui/Container';
 import { FC } from 'react';
-import { Typography } from '../../components/Typography';
+import { Typography } from '../ui/Typography';
 
 const cards = [
   {

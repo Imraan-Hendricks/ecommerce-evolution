@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Box } from '../../components/Box';
-import { Container } from '../../components/Container';
-import { Typography } from '../../components/Typography';
+import { Box } from '../ui/Box';
+import { Container } from '../ui/Container';
+import { Typography } from '../ui/Typography';
 
 export const TypographyDemo: FC = () => (
   <Box

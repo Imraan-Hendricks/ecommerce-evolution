@@ -1,5 +1,5 @@
-import { Hero } from '../modules/marketing/Hero';
-import { Layout } from '../modules/layout/Layout';
+import { Hero } from '../components/marketing/Hero';
+import { Layout } from '../components/layout/Layout';
 import { NextPage } from 'next';
 
 const Home: NextPage = () => (

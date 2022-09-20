@@ -1,7 +1,7 @@
-import { Box } from '../../components/Box';
-import { Container } from '../../components/Container';
+import { Box } from '../ui/Box';
+import { Container } from '../ui/Container';
 import { FC } from 'react';
-import { Typography } from '../../components/Typography';
+import { Typography } from '../ui/Typography';
 
 export const Hero: FC = () => (
   <Box as='section'>

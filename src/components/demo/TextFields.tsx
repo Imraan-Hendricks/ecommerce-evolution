@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { Box } from '../../components/Box';
-import { Container } from '../../components/Container';
+import { Box } from '../ui/Box';
+import { Container } from '../ui/Container';
 import { FC, PropsWithChildren } from 'react';
-import { HelperText } from '../../components/TextFieldHelperText';
-import { Input } from '../../components/TextFieldInput';
-import { Label } from '../../components/TextFieldLabel';
-import { TextField } from '../../components/TextField';
-import { Typography } from '../../components/Typography';
+import { HelperText } from '../ui/TextFieldHelperText';
+import { Input } from '../ui/TextFieldInput';
+import { Label } from '../ui/TextFieldLabel';
+import { TextField } from '../ui/TextField';
+import { Typography } from '../ui/Typography';
 
 export const TextFields: FC = () => (
   <Box css={{ padding: '5rem 1.25rem' }}>

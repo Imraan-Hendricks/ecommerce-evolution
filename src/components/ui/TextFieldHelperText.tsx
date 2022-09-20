@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Color } from '../theme/types';
+import { Color } from '../../theme/types';
 
 interface HelperTextProps {
   color?: Color;

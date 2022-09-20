@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Box } from '../../components/Box';
+import { Box } from '../ui/Box';
 import { Color, colors, Shade, shades } from '../../theme/types';
-import { Container } from '../../components/Container';
+import { Container } from '../ui/Container';
 import { FC } from 'react';
-import { Typography } from '../../components/Typography';
+import { Typography } from '../ui/Typography';
 
 export const Palette: FC = () => (
   <Box as='section' css={{ padding: '5rem 1.25rem' }}>
