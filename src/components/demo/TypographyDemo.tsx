@@ -67,17 +67,14 @@ const Paragaph: FC<
 > = ({ children, variant }) => (
   <Typography as='p' css={{ maxWidth: '48rem' }} variant={variant}>
     {variant}.{' '}
-    <Typography
-      as='span'
-      css={(theme) => ({ color: theme.palette.gray[500] })}
-      variant={variant}>
+    <Typography as='span' color='gray' variant={variant}>
       {children}
     </Typography>
   </Typography>
 );
 
-const Button = styled(Typography)();
-Button.defaultProps = { as: 'p', variant: 'button' };
+const Button = styled(Typography)({ display: 'block' });
+Button.defaultProps = { as: 'span', variant: 'button' };
 
 const Caption = styled(Typography)();
 Caption.defaultProps = { as: 'p', variant: 'caption' };

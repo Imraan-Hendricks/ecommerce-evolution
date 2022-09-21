@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Color } from '../../theme/types';
 
 export type TypographyVariant =
   | 'h1'
@@ -15,6 +16,18 @@ export type TypographyVariant =
   | 'caption'
   | 'overline';
 
-export const Typography = styled.p<{ variant?: TypographyVariant }>(
-  ({ theme, variant = 'body2' }) => ({ ...theme.typography[variant] })
-);
+export const Typography = styled.p<{
+  bold?: boolean;
+  color?: Color;
+  thin?: boolean;
+  variant?: TypographyVariant;
+}>(({ bold, color, theme, thin, variant = 'body2' }) => ({
+  ...theme.typography[variant],
+  color: color ? theme.palette[color][500] : theme.palette.black,
+
+  fontWeight: bold
+    ? theme.typography[variant].fontWeight + 100
+    : thin
+    ? theme.typography[variant].fontWeight - 100
+    : theme.typography[variant].fontWeight,
+}));
