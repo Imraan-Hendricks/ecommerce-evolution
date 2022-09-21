@@ -21,6 +21,6 @@ const TextFieldBase: FC<TextFieldBaseProps> = ({ children, className }) => {
 
 export const TextField = styled(TextFieldBase)({
   display: 'grid',
-  gridTemplateColumns: 'grid-template-columns: repeat(1, minmax(0, 1fr))',
+  gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
   gap: '1.25rem',
 });

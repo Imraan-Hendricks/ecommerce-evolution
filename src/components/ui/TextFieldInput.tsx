@@ -20,6 +20,7 @@ export const Input = styled.input<InputProps>(
 
     color: theme.palette.gray[700],
     backgroundColor: theme.palette.gray[200],
+    transition: theme.transition.colors,
 
     borderStyle: 'solid',
     borderColor: isError ? theme.palette.error[500] : theme.palette.gray[200],
@@ -32,6 +33,8 @@ export const Input = styled.input<InputProps>(
       accentColor: theme.palette[color][500],
       outline: '2px solid transparent',
       outlineOffset: '2px',
+      transition: theme.transition.colors,
+      transitionDuration: '225ms',
     },
   })
 );

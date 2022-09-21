@@ -11,23 +11,6 @@ export const theme = {
     down: (breakpoint: Breakpoint) =>
       `@media (max-width: ${theme.breakpoints.values[breakpoint]}px)`,
   },
-  opacity: {
-    0: 0,
-    5: 0.05,
-    10: 0.1,
-    20: 0.2,
-    25: 0.25,
-    30: 0.3,
-    40: 0.4,
-    50: 0.5,
-    60: 0.6,
-    70: 0.7,
-    75: 0.75,
-    80: 0.8,
-    90: 0.9,
-    95: 0.95,
-    100: 1,
-  },
   palette: {
     primary: {
       50: '#eff6ff',
@@ -142,6 +125,17 @@ export const theme = {
     22: '0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)',
     23: '0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)',
     24: '0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)',
+  },
+  transition: {
+    none: 'none',
+    all: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    standard:
+      'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    colors:
+      'color, background-color, border-color, text-decoration-color, fill, stroke 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    opacity: 'opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    shadow: 'box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    transform: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
   typography: {
     h1: {
