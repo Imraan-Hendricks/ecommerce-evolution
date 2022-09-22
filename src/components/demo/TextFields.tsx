@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '../../theme/types';
 import { Container } from '../ui/Container';
 import { FC } from 'react';
 import { HelperText } from '../ui/TextFieldHelperText';
@@ -66,40 +67,33 @@ export const TextFields: FC = () => (
 
       <TwoColumnLayout>
         <SectionHeading twoColumn>Colors</SectionHeading>
-        {(
-          [
-            'primary',
-            'secondary',
-            'info',
-            'success',
-            'warning',
-            'error',
-          ] as const
-        ).map((color) => (
-          <TextField key={color}>
-            {({ isFocused, setIsFocused }) => (
-              <>
-                <Label
-                  color={color}
-                  htmlFor={color}
-                  isError={false}
-                  isFocused={isFocused}
-                  css={{ textTransform: 'capitalize' }}>
-                  {color}
-                </Label>
-                <Input
-                  color={color}
-                  id={color}
-                  isError={false}
-                  name={color}
-                  onBlur={() => setIsFocused(false)}
-                  onFocus={() => setIsFocused(true)}
-                  placeholder={`Enter ${color}`}
-                />
-              </>
-            )}
-          </TextField>
-        ))}
+        {colors.map((color) =>
+          color === 'white' ? null : (
+            <TextField key={color}>
+              {({ isFocused, setIsFocused }) => (
+                <>
+                  <Label
+                    color={color}
+                    htmlFor={color}
+                    isError={false}
+                    isFocused={isFocused}
+                    css={{ textTransform: 'capitalize' }}>
+                    {color}
+                  </Label>
+                  <Input
+                    color={color}
+                    id={color}
+                    isError={false}
+                    name={color}
+                    onBlur={() => setIsFocused(false)}
+                    onFocus={() => setIsFocused(true)}
+                    placeholder={`Enter ${color}`}
+                  />
+                </>
+              )}
+            </TextField>
+          )
+        )}
       </TwoColumnLayout>
 
       <SectionHeading>Required</SectionHeading>

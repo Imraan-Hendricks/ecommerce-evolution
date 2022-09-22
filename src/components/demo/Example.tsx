@@ -141,7 +141,7 @@ const Card = styled.div<{ color?: Color }>(({ color = 'primary', theme }) => ({
   display: 'grid',
   gap: '0.5rem',
   boxShadow: theme.shadows[8],
-  backgroundColor: theme.palette.white,
+  backgroundColor: theme.palette.white[500],
   borderRadius: '0.375rem',
   '&:hover': {
     backgroundColor: theme.palette[color][500],
@@ -150,7 +150,7 @@ const Card = styled.div<{ color?: Color }>(({ color = 'primary', theme }) => ({
     transition: theme.transition.all,
     transitionDuration: '500ms',
     h2: { ...theme.typography.body2, color: theme.palette.gray[200] },
-    p: { ...theme.typography.h4, color: theme.palette.black },
+    p: { ...theme.typography.h4, color: theme.palette.black[500] },
     [`${CardDivider}`]: { borderColor: theme.palette.gray[200] },
     '&:active': {
       backgroundColor: theme.palette.success[500],

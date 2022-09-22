@@ -32,6 +32,6 @@ export const Label = styled(LabelBase)<LabelProps>(
       ? theme.palette[color][500]
       : isError
       ? theme.palette.error[500]
-      : theme.palette.black,
+      : theme.palette.black[500],
   })
 );

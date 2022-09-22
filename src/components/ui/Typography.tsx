@@ -21,10 +21,9 @@ export const Typography = styled.p<{
   color?: Color;
   thin?: boolean;
   variant?: TypographyVariant;
-}>(({ bold, color, theme, thin, variant = 'body2' }) => ({
+}>(({ bold, color = 'black', theme, thin, variant = 'body2' }) => ({
   ...theme.typography[variant],
-  color: color ? theme.palette[color][500] : theme.palette.black,
-
+  color: theme.palette[color][500],
   fontWeight: bold
     ? theme.typography[variant].fontWeight + 100
     : thin

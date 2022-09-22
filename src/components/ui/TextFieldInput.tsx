@@ -28,7 +28,7 @@ export const Input = styled.input<InputProps>(
     borderRadius: '0.375rem',
 
     '&:focus': {
-      backgroundColor: theme.palette.white,
+      backgroundColor: theme.palette.white[500],
       borderColor: theme.palette[color][500],
       accentColor: theme.palette[color][500],
       outline: '2px solid transparent',
