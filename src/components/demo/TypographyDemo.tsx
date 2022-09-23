@@ -33,7 +33,7 @@ export const TypographyDemo: FC = () => (
 );
 
 const Module = styled.section(({ theme }) => ({
-  backgroundColor: theme.palette.gray[50],
+  backgroundColor: theme.palette.primary[50],
   padding: '6rem 1.25rem',
 }));
 

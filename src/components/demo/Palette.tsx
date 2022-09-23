@@ -4,7 +4,7 @@ import { Container } from '../ui/Container';
 import { FC, Fragment } from 'react';
 import { Typography } from '../ui/Typography';
 
-const title = 'Colors';
+const title = 'Palette';
 
 export const Palette: FC = () => (
   <Module>
@@ -38,7 +38,7 @@ const Gallery = styled.div({ display: 'grid', gap: '1.75rem' });
 const GalleryItem = Fragment;
 
 const ItemHeading = styled(Typography)();
-ItemHeading.defaultProps = { as: 'h2', variant: 'body2' };
+ItemHeading.defaultProps = { as: 'h2', variant: 'subtitle1' };
 
 const ItemDisplay = styled.div(({ theme }) => ({
   display: 'grid',
