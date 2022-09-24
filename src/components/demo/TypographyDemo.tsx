@@ -12,35 +12,52 @@ export const TypographyDemo: FC = () => (
   <Module>
     <Layout>
       <Title>Typography</Title>
-
-      <H1>H1. Heading One</H1>
-      <H2>H2. Heading One</H2>
-      <H3>H3. Heading One</H3>
-      <H4>H4. Heading One</H4>
-      <H5>H5. Heading One</H5>
-      <H6>H6. Heading One</H6>
-
-      <Paragaph variant='subtitle1'>{paragaph}</Paragaph>
-      <Paragaph variant='subtitle2'>{paragaph}</Paragaph>
-      <Paragaph variant='body1'>{paragaph}</Paragaph>
-      <Paragaph variant='body2'>{paragaph}</Paragaph>
-
-      <Button>Button Text</Button>
-      <Caption>caption text</Caption>
-      <Overline>OVERLINE TEXT</Overline>
+      <TwoColumn>
+        <Layout>
+          <H1>H1. Heading One</H1>
+          <H2>H2. Heading Two</H2>
+          <H3>H3. Heading Three</H3>
+          <H4>H4. Heading Four</H4>
+          <H5>H5. Heading Five</H5>
+          <H6>H6. Heading Six</H6>
+        </Layout>
+        <Layout>
+          <Paragaph variant='subtitle1'>{paragaph}</Paragaph>
+          <Paragaph variant='subtitle2'>{paragaph}</Paragaph>
+          <Paragaph variant='body1'>{paragaph}</Paragaph>
+          <Paragaph variant='body2'>{paragaph}</Paragaph>
+          <Button>Button Text</Button>
+          <Caption>caption text</Caption>
+          <Overline>OVERLINE TEXT</Overline>
+        </Layout>
+      </TwoColumn>
     </Layout>
   </Module>
 );
 
-const Module = styled.section(({ theme }) => ({
-  backgroundColor: theme.palette.primary[50],
-  padding: '6rem 1.25rem',
-}));
+const Module = styled.section({ padding: '6rem 1.25rem' });
 
 const Layout = styled(Container)({ display: 'grid', gap: '2rem' });
 
-const Title = styled(Typography)();
+const Title = styled(Typography)(({ theme }) => ({
+  textAlign: 'center',
+  [theme.breakpoints.up('2xl')]: {
+    textAlign: 'start',
+  },
+}));
 Title.defaultProps = { as: 'h1', variant: 'h4' };
+
+const TwoColumn = styled.div(({ theme }) => ({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+  gap: '2rem',
+  textAlign: 'center',
+  margin: 'auto auto',
+  [theme.breakpoints.up('2xl')]: {
+    gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    textAlign: 'start',
+  },
+}));
 
 const H1 = styled(Typography)();
 H1.defaultProps = { as: 'h1', variant: 'h1' };
