@@ -193,7 +193,10 @@ export const TextFields: FC = () => (
   </Module>
 );
 
-const Module = styled.section({ padding: '6rem 1.25rem' });
+const Module = styled.section(({ theme }) => ({
+  backgroundColor: theme.palette.gray[50],
+  padding: '6rem 1.25rem',
+}));
 
 const Layout = styled(Container)({ display: 'grid', gap: '2rem' });
 Layout.defaultProps = { as: 'form' };

@@ -4,8 +4,8 @@ import { FocusEvent } from 'react';
 
 interface InputProps {
   color?: Color;
-  id: string;
-  isError: boolean;
+  id?: string;
+  isError?: boolean;
   name: string;
   onBlur?: (() => void) | ((e: FocusEvent<HTMLInputElement, Element>) => void);
   onFocus?: (() => void) | ((e: FocusEvent<HTMLInputElement, Element>) => void);

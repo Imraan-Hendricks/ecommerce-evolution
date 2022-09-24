@@ -4,24 +4,25 @@ import { FC, PropsWithChildren } from 'react';
 
 interface LabelBaseProps {
   className?: string;
+  htmlFor?: string;
   required?: boolean;
 }
 
 const LabelBase: FC<PropsWithChildren<LabelBaseProps>> = ({
   children,
   className,
+  htmlFor,
   required,
 }) => (
-  <label className={className}>
+  <label className={className} htmlFor={htmlFor}>
     {children} {required && '*'}
   </label>
 );
 
 interface LabelProps {
   color?: Color;
-  htmlFor: string;
-  isError: boolean;
-  isFocused: boolean;
+  isError?: boolean;
+  isFocused?: boolean;
 }
 
 export const Label = styled(LabelBase)<LabelProps>(
@@ -33,5 +34,6 @@ export const Label = styled(LabelBase)<LabelProps>(
       : isError
       ? theme.palette.error[500]
       : theme.palette.black[500],
+    cursor: 'pointer',
   })
 );

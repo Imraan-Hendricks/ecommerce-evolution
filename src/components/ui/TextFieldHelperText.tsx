@@ -3,8 +3,8 @@ import { Color } from '../../theme/types';
 
 interface HelperTextProps {
   color?: Color;
-  isError: boolean;
-  isFocused: boolean;
+  isError?: boolean;
+  isFocused?: boolean;
 }
 
 export const HelperText = styled.p<HelperTextProps>(

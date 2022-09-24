@@ -1,15 +1,17 @@
 import styled from '@emotion/styled';
 import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react';
 
+type Children = ({
+  isFocused,
+  setIsFocused,
+}: {
+  isFocused: boolean;
+  setIsFocused: Dispatch<SetStateAction<boolean>>;
+}) => ReactNode;
+
 interface TextFieldBaseProps {
   className?: string;
-  children: ({
-    isFocused,
-    setIsFocused,
-  }: {
-    isFocused: boolean;
-    setIsFocused: Dispatch<SetStateAction<boolean>>;
-  }) => ReactNode;
+  children: Children;
 }
 
 const TextFieldBase: FC<TextFieldBaseProps> = ({ children, className }) => {
