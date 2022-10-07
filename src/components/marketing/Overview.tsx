@@ -35,17 +35,17 @@ const icons = [
 
 const cards = [
   {
-    title: 'Primary Section',
+    title: 'Premium services',
     color: 'primary',
     body: 'Lorem ipsum dolor sit amet',
   },
   {
-    title: 'Secondary Section',
+    title: 'Quality assurance',
     color: 'secondary',
     body: 'Lorem ipsum dolor sit amet',
   },
   {
-    title: 'Info Section',
+    title: 'Maximum security',
     color: 'primary',
     body: 'Lorem ipsum dolor sit amet',
   },
@@ -66,27 +66,41 @@ export const Overview: FC = () => (
           ))}
         </IconList>
       </ContentBlock>
-      <CardList>
-        {cards.map(({ title, color, body }) => (
-          <Card key={title} color={color}>
-            <CardTitle>{title}</CardTitle>
-            <CardBody>{body}</CardBody>
-            <CardDivider color={color} />
-          </Card>
-        ))}
-      </CardList>
+      <div
+        css={{
+          position: 'relative',
+          borderRadius: '0.25rem',
+          overflow: 'hidden',
+        }}>
+        <img
+          css={{ position: 'relative' }}
+          src='/images/marketing/overview.jpg'
+          alt='overview'
+        />
+        <div
+          css={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            backgroundImage:
+              'linear-gradient(to right, rgba(255,255,255,0.40), rgb(59, 130, 246, 0.60))',
+            top: 0,
+            left: 0,
+          }}></div>
+      </div>
     </Layout>
   </Module>
 );
 
-const Module = styled.section(({ theme }) => ({
-  backgroundColor: theme.palette.gray[50],
+const Module = styled.section({
   padding: '6rem 1.25rem',
-}));
+});
 
 const Layout = styled(Container)(({ theme }) => ({
   display: 'grid',
-  gap: '2rem',
+  alignItems: 'center',
+  rowGap: '2rem',
+  columnGap: '8rem',
   gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
   [theme.breakpoints.up('xl')]: {
     gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
@@ -117,7 +131,6 @@ const TitleDivider = styled.hr(({ theme }) => ({
 const Body = styled(Typography)(({ theme }) => ({
   color: theme.palette.gray[600],
   width: '100%',
-  [theme.breakpoints.up('md')]: { width: '80%' },
 }));
 Body.defaultProps = { as: 'p', variant: 'body2' };
 
@@ -126,8 +139,7 @@ const IconList = styled.div(({ theme }) => ({
   justifyContent: 'space-around',
   alignItems: 'center',
   width: '100%',
-  [theme.breakpoints.up('md')]: {
-    width: '80%',
+  [theme.breakpoints.up('xl')]: {
     justifyContent: 'space-between',
   },
 }));
@@ -144,48 +156,4 @@ const Icon: FC<{ color?: Color; icon: IconDefinition }> = ({
       height: '4rem',
     })}
   />
-);
-
-const CardList = styled.div({ display: 'grid', gap: '2rem' });
-
-const Card = styled.div<{ color?: Color }>(({ color = 'primary', theme }) => ({
-  padding: '2rem 4rem',
-  width: '100%',
-  display: 'grid',
-  gap: '0.5rem',
-  boxShadow: theme.shadows[8],
-  backgroundColor: theme.palette.white[500],
-  borderRadius: '0.375rem',
-  '&:hover': {
-    backgroundColor: theme.palette[color][400],
-    cursor: 'pointer',
-    paddingLeft: '5rem',
-    transition: theme.transition.all,
-    transitionDuration: '500ms',
-    h2: { ...theme.typography.body2, color: theme.palette.gray[200] },
-    p: { ...theme.typography.h6, color: theme.palette.black[500] },
-    [`${CardDivider}`]: { borderColor: theme.palette.gray[200] },
-    '&:active': {
-      backgroundColor: theme.palette.success[500],
-      boxShadow: theme.shadows[0],
-      paddingLeft: '4rem',
-      p: { ...theme.typography.h6, color: theme.palette.gray[200] },
-    },
-  },
-}));
-
-const CardTitle = styled(Typography)();
-CardTitle.defaultProps = { as: 'h2', variant: 'h6' };
-
-const CardBody = styled(Typography)(({ theme }) => ({
-  color: theme.palette.gray[500],
-}));
-CardBody.defaultProps = { as: 'p', variant: 'body2' };
-
-const CardDivider = styled.hr<{ color?: Color }>(
-  ({ color = 'gray', theme }) => ({
-    borderColor: theme.palette[color][400],
-    borderWidth: '0.125rem',
-    width: '4rem',
-  })
 );

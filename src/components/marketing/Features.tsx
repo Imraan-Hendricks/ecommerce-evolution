@@ -19,21 +19,21 @@ const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 const features = [
   {
-    color: 'secondary',
+    color: 'primary',
     icon: faGlobe,
     name: 'Competitve exchange rates',
     description:
       'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
   {
-    color: 'primary',
+    color: 'secondary',
     icon: faScaleBalanced,
     name: 'No hidden fees',
     description:
       'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
   {
-    color: 'secondary',
+    color: 'primary',
     icon: faStar,
     name: 'Transfers are instant',
     description:
@@ -63,7 +63,10 @@ export const Features: FC = () => (
   </Module>
 );
 
-const Module = styled.section({ padding: '6rem 1.25rem' });
+const Module = styled.section(({ theme }) => ({
+  backgroundColor: theme.palette.gray[50],
+  padding: '6rem 1.25rem',
+}));
 
 const Layout = styled(Container)({ display: 'grid', gap: '2rem' });
 
@@ -73,13 +76,13 @@ const Title = styled(Typography)();
 Title.defaultProps = { as: 'h1', variant: 'h4' };
 
 const TitleDivider = styled.hr(({ theme }) => ({
-  borderColor: theme.palette.primary[500],
+  borderColor: theme.palette.secondary[500],
   borderWidth: '0.125rem',
   width: '4rem',
 }));
 
 const Subtitle = styled(Typography)();
-Subtitle.defaultProps = { as: 'h2', color: 'secondary', variant: 'subtitle1' };
+Subtitle.defaultProps = { as: 'h2', color: 'primary', variant: 'subtitle1' };
 
 const Description = styled(Typography)({ maxWidth: '48rem' });
 Description.defaultProps = { as: 'p', color: 'gray', variant: 'subtitle1' };
