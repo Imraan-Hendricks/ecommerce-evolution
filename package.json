@@ -1,6 +1,6 @@
 {
   "name": "next-emotion-mongo",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "author": "Imraan-Hendricks",
   "description": "Experimenting with styled components using Emotion in react",
   "private": true,
@@ -22,6 +22,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@heroicons/react": "^2.0.12",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
