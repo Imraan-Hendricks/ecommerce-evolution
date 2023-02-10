@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { MutableRefObject } from 'react';
 
 type Behavior = 'auto' | 'smooth';
 
@@ -12,7 +12,7 @@ export const scrollToElement = ({
 }: {
   behavior?: Behavior;
   yOffset?: number;
-  ref: RefObject<HTMLElement | null>;
+  ref: MutableRefObject<HTMLElement | null>;
 }) => {
   if (!ref || !ref.current || !ref.current.offsetTop) return;
   window.scroll({ top: ref.current.offsetTop - yOffset, behavior });

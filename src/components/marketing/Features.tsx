@@ -7,6 +7,7 @@ import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '../ui/Typography';
+import { useNavbar } from '../layout/NavbarContext';
 
 const subtitle = 'Deploy faster';
 
@@ -41,27 +42,30 @@ const features = [
   },
 ] as const;
 
-export const Features: FC = () => (
-  <Module>
-    <Layout>
-      <Header>
-        <Subtitle>{subtitle}</Subtitle>
-        <Title>{title}</Title>
-        <TitleDivider />
-        <Description>{description}</Description>
-      </Header>
-      <FeatureList>
-        {features.map(({ color, icon, name, description }) => (
-          <Feature key={name}>
-            <FeatureIcon color={color} icon={icon} />
-            <FeatureName>{name}</FeatureName>
-            <FeatureDesc>{description}</FeatureDesc>
-          </Feature>
-        ))}
-      </FeatureList>
-    </Layout>
-  </Module>
-);
+export const Features: FC = () => {
+  const { featuresRef } = useNavbar();
+  return (
+    <Module ref={featuresRef}>
+      <Layout>
+        <Header>
+          <Subtitle>{subtitle}</Subtitle>
+          <Title>{title}</Title>
+          <TitleDivider />
+          <Description>{description}</Description>
+        </Header>
+        <FeatureList>
+          {features.map(({ color, icon, name, description }) => (
+            <Feature key={name}>
+              <FeatureIcon color={color} icon={icon} />
+              <FeatureName>{name}</FeatureName>
+              <FeatureDesc>{description}</FeatureDesc>
+            </Feature>
+          ))}
+        </FeatureList>
+      </Layout>
+    </Module>
+  );
+};
 
 const Module = styled.section(({ theme }) => ({
   backgroundColor: theme.palette.gray[50],

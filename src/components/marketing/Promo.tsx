@@ -1,8 +1,8 @@
+import { Box } from '../ui/Box';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { FC } from 'react';
 import { Typography } from '../ui/Typography';
-import { Box } from '../ui/Box';
 
 export const Promo: FC = () => (
   <Box

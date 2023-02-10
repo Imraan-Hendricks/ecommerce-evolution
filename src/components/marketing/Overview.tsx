@@ -10,6 +10,7 @@ import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Typography } from '../ui/Typography';
+import { useNavbar } from '../layout/NavbarContext';
 
 const subtitle = 'Rapid development';
 
@@ -51,46 +52,49 @@ const cards = [
   },
 ] as const;
 
-export const Overview: FC = () => (
-  <Module>
-    <Layout>
-      <ContentBlock>
-        <Subtitle>{subtitle}</Subtitle>
-        <Title>{title}</Title>
-        <TitleDivider />
-        <Body>{body.one}</Body>
-        <Body>{body.two}</Body>
-        <IconList>
-          {icons.map((props) => (
-            <Icon {...props} />
-          ))}
-        </IconList>
-      </ContentBlock>
-      <div
-        css={{
-          position: 'relative',
-          borderRadius: '0.25rem',
-          overflow: 'hidden',
-        }}>
-        <img
-          css={{ position: 'relative' }}
-          src='/images/marketing/overview.jpg'
-          alt='overview'
-        />
+export const Overview: FC = () => {
+  const { overviewRef } = useNavbar();
+  return (
+    <Module ref={overviewRef}>
+      <Layout>
+        <ContentBlock>
+          <Subtitle>{subtitle}</Subtitle>
+          <Title>{title}</Title>
+          <TitleDivider />
+          <Body>{body.one}</Body>
+          <Body>{body.two}</Body>
+          <IconList>
+            {icons.map((props) => (
+              <Icon {...props} />
+            ))}
+          </IconList>
+        </ContentBlock>
         <div
           css={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            backgroundImage:
-              'linear-gradient(to right, rgba(255,255,255,0.40), rgb(59, 130, 246, 0.60))',
-            top: 0,
-            left: 0,
-          }}></div>
-      </div>
-    </Layout>
-  </Module>
-);
+            position: 'relative',
+            borderRadius: '0.25rem',
+            overflow: 'hidden',
+          }}>
+          <img
+            css={{ position: 'relative' }}
+            src='/images/marketing/overview.jpg'
+            alt='overview'
+          />
+          <div
+            css={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              backgroundImage:
+                'linear-gradient(to right, rgba(255,255,255,0.40), rgb(59, 130, 246, 0.60))',
+              top: 0,
+              left: 0,
+            }}></div>
+        </div>
+      </Layout>
+    </Module>
+  );
+};
 
 const Module = styled.section({
   padding: '6rem 1.25rem',
