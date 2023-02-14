@@ -17,6 +17,7 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
     featuresRef,
     overviewRef,
     pricingRef,
+    faqRef,
     getStartedRef,
   } = useNavbar();
 
@@ -43,7 +44,12 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
             {
               name: 'Pricing',
               onClick: () => scrollToElement({ ref: pricingRef }),
-              active: isActive(pricingRef) && !isActive(getStartedRef, -400),
+              active: isActive(pricingRef) && !isActive(faqRef),
+            },
+            {
+              name: 'FAQ',
+              onClick: () => scrollToElement({ ref: faqRef }),
+              active: isActive(faqRef) && !isActive(getStartedRef, -400),
             },
             {
               name: 'Get Started',

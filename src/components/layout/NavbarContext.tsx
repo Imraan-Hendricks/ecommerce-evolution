@@ -17,6 +17,7 @@ interface ContextProps {
   featuresRef: MutableRefObject<HTMLDivElement | null>;
   overviewRef: MutableRefObject<HTMLDivElement | null>;
   pricingRef: MutableRefObject<HTMLDivElement | null>;
+  faqRef: MutableRefObject<HTMLDivElement | null>;
   getStartedRef: MutableRefObject<HTMLDivElement | null>;
 }
 
@@ -36,6 +37,7 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
   const featuresRef = useRef<null | HTMLDivElement>(null);
   const overviewRef = useRef<null | HTMLDivElement>(null);
   const pricingRef = useRef<null | HTMLDivElement>(null);
+  const faqRef = useRef<null | HTMLDivElement>(null);
   const getStartedRef = useRef<null | HTMLDivElement>(null);
 
   const { scrollY } = useScroll();
@@ -57,6 +59,7 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
         featuresRef,
         overviewRef,
         pricingRef,
+        faqRef,
         getStartedRef,
       }}>
       {children}

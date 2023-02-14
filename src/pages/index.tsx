@@ -1,4 +1,5 @@
 import { CTA } from '../components/marketing/CTA';
+import { FAQ } from '../components/marketing/FAQ';
 import { Features } from '../components/marketing/Features';
 import { Hero } from '../components/marketing/Hero';
 import { Layout } from '../components/layout/Layout';
@@ -14,6 +15,7 @@ const Home: NextPage = () => (
     <Features />
     <Overview />
     <Pricing />
+    <FAQ />
     <CTA />
   </Layout>
 );

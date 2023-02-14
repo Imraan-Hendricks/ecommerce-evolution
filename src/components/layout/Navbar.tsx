@@ -20,6 +20,7 @@ export const Navbar: FC = () => {
     featuresRef,
     overviewRef,
     pricingRef,
+    faqRef,
     getStartedRef,
   } = useNavbar();
 
@@ -59,7 +60,12 @@ export const Navbar: FC = () => {
               {
                 name: 'Pricing',
                 onClick: () => scrollToElement({ ref: pricingRef }),
-                active: isActive(pricingRef) && !isActive(getStartedRef, -400),
+                active: isActive(pricingRef) && !isActive(faqRef),
+              },
+              {
+                name: 'FAQ',
+                onClick: () => scrollToElement({ ref: faqRef }),
+                active: isActive(faqRef) && !isActive(getStartedRef, -400),
               },
               {
                 name: 'Get Started',
