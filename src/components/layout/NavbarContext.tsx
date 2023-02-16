@@ -18,7 +18,8 @@ interface ContextProps {
   overviewRef: MutableRefObject<HTMLDivElement | null>;
   pricingRef: MutableRefObject<HTMLDivElement | null>;
   faqRef: MutableRefObject<HTMLDivElement | null>;
-  getStartedRef: MutableRefObject<HTMLDivElement | null>;
+  contactRef: MutableRefObject<HTMLDivElement | null>;
+  newsletterRef: MutableRefObject<HTMLDivElement | null>;
 }
 
 const NavbarContext = createContext<ContextProps | undefined>(undefined);
@@ -38,7 +39,8 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
   const overviewRef = useRef<null | HTMLDivElement>(null);
   const pricingRef = useRef<null | HTMLDivElement>(null);
   const faqRef = useRef<null | HTMLDivElement>(null);
-  const getStartedRef = useRef<null | HTMLDivElement>(null);
+  const contactRef = useRef<null | HTMLDivElement>(null);
+  const newsletterRef = useRef<null | HTMLDivElement>(null);
 
   const { scrollY } = useScroll();
 
@@ -60,7 +62,8 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
         overviewRef,
         pricingRef,
         faqRef,
-        getStartedRef,
+        contactRef,
+        newsletterRef,
       }}>
       {children}
     </NavbarContext.Provider>

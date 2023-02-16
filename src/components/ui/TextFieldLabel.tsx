@@ -35,5 +35,6 @@ export const Label = styled(LabelBase)<LabelProps>(
       ? theme.palette.error[500]
       : theme.palette.black[500],
     cursor: 'pointer',
+    fontWeight: theme.typography.body2.fontWeight + 100,
   })
 );

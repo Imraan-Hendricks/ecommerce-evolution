@@ -8,11 +8,11 @@ import { TextField } from '../ui/TextField';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 
-export const CTA: FC = () => {
-  const { getStartedRef } = useNavbar();
+export const Newsletter: FC = () => {
+  const { newsletterRef } = useNavbar();
   return (
     <section
-      ref={getStartedRef}
+      ref={newsletterRef}
       css={(theme) => ({
         padding: '6rem 1.25rem',
         backgroundColor: theme.palette.primary[100],
@@ -25,7 +25,7 @@ export const CTA: FC = () => {
           textAlign: 'center',
         }}>
         <Typography as='h1' variant='h4'>
-          Get started with your digital solution
+          Subscribe to our newsletter and get the latest updates
         </Typography>
         <Typography
           as='p'

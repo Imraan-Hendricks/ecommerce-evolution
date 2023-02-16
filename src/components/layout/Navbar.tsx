@@ -21,7 +21,8 @@ export const Navbar: FC = () => {
     overviewRef,
     pricingRef,
     faqRef,
-    getStartedRef,
+    contactRef,
+    newsletterRef,
   } = useNavbar();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -65,12 +66,17 @@ export const Navbar: FC = () => {
               {
                 name: 'FAQ',
                 onClick: () => scrollToElement({ ref: faqRef }),
-                active: isActive(faqRef) && !isActive(getStartedRef, -400),
+                active: isActive(faqRef) && !isActive(contactRef),
               },
               {
-                name: 'Get Started',
-                onClick: () => scrollToElement({ ref: getStartedRef }),
-                active: isActive(getStartedRef, -400),
+                name: 'Contact',
+                onClick: () => scrollToElement({ ref: contactRef }),
+                active: isActive(contactRef) && !isActive(newsletterRef, -400),
+              },
+              {
+                name: 'Newsletter',
+                onClick: () => scrollToElement({ ref: newsletterRef }),
+                active: isActive(newsletterRef, -400),
               },
             ].map(({ active, name, onClick }) => (
               <NavItem

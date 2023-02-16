@@ -11,7 +11,8 @@ export const Button = styled.button<{ color?: Color }>(
     display: 'inline-block',
     padding: '.75rem 1.75rem',
     textAlign: 'center',
-    transition: theme.transition.colors,
+    transition: theme.transition.all,
+    transitionDuration: '300ms',
 
     '&:hover': {
       color: theme.palette[color].contrast[700],

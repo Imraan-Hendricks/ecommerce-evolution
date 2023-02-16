@@ -1,8 +1,9 @@
-import { CTA } from '../components/marketing/CTA';
+import { Contact } from '../components/marketing/Contact';
 import { FAQ } from '../components/marketing/FAQ';
 import { Features } from '../components/marketing/Features';
 import { Hero } from '../components/marketing/Hero';
 import { Layout } from '../components/layout/Layout';
+import { Newsletter } from '../components/marketing/Newsletter';
 import { NextPage } from 'next';
 import { Overview } from '../components/marketing/Overview';
 import { Pricing } from '../components/marketing/Pricing';
@@ -16,7 +17,8 @@ const Home: NextPage = () => (
     <Overview />
     <Pricing />
     <FAQ />
-    <CTA />
+    <Contact />
+    <Newsletter />
   </Layout>
 );
 
