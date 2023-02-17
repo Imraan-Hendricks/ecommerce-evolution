@@ -19,7 +19,6 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
     pricingRef,
     faqRef,
     contactRef,
-    newsletterRef,
   } = useNavbar();
 
   return (
@@ -55,12 +54,7 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
             {
               name: 'Contact',
               onClick: () => scrollToElement({ ref: contactRef }),
-              active: isActive(contactRef) && !isActive(newsletterRef, -400),
-            },
-            {
-              name: 'Get Started',
-              onClick: () => scrollToElement({ ref: newsletterRef }),
-              active: isActive(newsletterRef, -400),
+              active: isActive(contactRef),
             },
           ].map(({ active, name, onClick }) => (
             <MenuItem

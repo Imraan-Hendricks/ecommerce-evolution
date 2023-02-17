@@ -25,9 +25,9 @@ export const Promo: FC = () => (
         css={{ textAlign: 'center' }}
         variant='subtitle1'
         bold>
-        <strong>Summer Sale:</strong>{' '}
+        <strong>Limited Time Offer:</strong>{' '}
         <Typography as='span' variant='subtitle1'>
-          20% discount on all e-commerce applications
+          Save 50% on All Website Design and Development services!
         </Typography>
       </Typography>
       <Button

@@ -25,5 +25,22 @@ export const Button = styled.button<{ color?: Color }>(
       backgroundColor: theme.palette[color][500],
       boxShadow: theme.shadows[0],
     },
+
+    '&:disabled': {
+      opacity: '75%',
+      cursor: 'default',
+
+      '&:hover': {
+        color: theme.palette[color].contrast[600],
+        backgroundColor: theme.palette[color][600],
+        boxShadow: theme.shadows[0],
+      },
+
+      '&:active': {
+        color: theme.palette[color].contrast[600],
+        backgroundColor: theme.palette[color][600],
+        boxShadow: theme.shadows[0],
+      },
+    },
   })
 );

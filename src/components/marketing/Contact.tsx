@@ -50,12 +50,12 @@ export const Contact: FC = () => {
               {
                 Icon: EnvelopeIcon,
                 title: 'How can we help you?',
-                body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor odio quis sapien dignissim. Sed ut risus et diam iaculis et at orci.',
+                body: `Learn more about our ecommerce solutions and how we can help your business succeed online. We'll work with you every step of the way to ensure you get the results you need and the support you deserve.`,
               },
               {
                 Icon: BanknotesIcon,
-                title: '100% Money back guarantee',
-                body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                title: 'Contact Us for Expert Solutions',
+                body: `If you have any questions or concerns about our services, don't hesitate to reach out. Our team is always happy to help and will do everything we can to ensure your experience with us is a positive one.`,
               },
             ].map(({ Icon, title, body }) => (
               <Box key={title} css={{ display: 'flex', height: 'max-content' }}>

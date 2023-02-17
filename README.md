@@ -1,35 +1,29 @@
-# Next Emotion Mongo
+# Ecommerce Evolution
 
-Experimenting with styled components using Emotion in react.
+Welcome to Ecommerce Evolution, the ultimate ecommerce solution for businesses of all sizes. Our platform offers a range of customizable features, premium support, and marketing tools to help you create a thriving online store. With Ecommerce Evolution, you can build, manage, and grow your business with ease. Get started today and take your ecommerce journey to the next level.
 
 <br/>
 
 ### Features:
 
-- Authentication
-- Authorization
-- Access control
-- Cookie-based sessions
-- Database with user information
-- Data validation
-- File uploads
-- Image optimization
-- Error handling
+- Intuitive navigation
+- Responsive design
+- Social media links
+- In-view and subtle animations
+- Contact form with form validation
+- Theme and base styles
 
 <br />
 
 ### Key Technologies:
 
 - Emotion: A library designed for writing css styles with JavaScript.
-- MongoDB: Document-oriented database classified as NoSql.
 - Next.js: An open-source React front-end development web framework.
-- React Query: Performant and powerful data synchronization for React.
 
 <br/>
 
 ### Requirements:
 
-- MongoDB Version 4.x
 - Node.js Version 16.x
 
 <br/>

@@ -12,10 +12,12 @@ const pricing = [
     description: 'All the basics for starting a new business',
     price: '$9',
     features: [
-      'Individual configuration',
       'No setup, or hidden fees',
-      'Team size: 1 developer',
-      'Premium support: 6 months',
+      'Team size: 1 people',
+      'Basic store customization',
+      'Essential ecommerce features',
+      'Basic SEO tools',
+      'Basic support options',
       'Free updates: 6 months',
     ],
   },
@@ -24,10 +26,12 @@ const pricing = [
     description: 'Recommended package for flourishing businesses',
     price: '$29',
     features: [
-      'Individual configuration',
       'No setup, or hidden fees',
-      'Team size: 5 developer',
-      'Premium support: 12 months',
+      'Team size: 5 people',
+      'Enhanced store customization and branding',
+      'Advanced ecommerce features',
+      'Marketing and SEO tools',
+      'Expanded support options',
       'Free updates: 12 months',
     ],
   },
@@ -36,9 +40,11 @@ const pricing = [
     description: 'Best option for businesses at scale',
     price: '$59',
     features: [
-      'Individual configuration',
       'No setup, or hidden fees',
-      'Team size: 10 developer',
+      'Team size: 10 people',
+      'Extensive store customization and branding',
+      'Advanced ecommerce features',
+      'Marketing and SEO tools',
       'Premium support: 24 months',
       'Free updates: 24 months',
     ],
@@ -63,8 +69,8 @@ export const Pricing: FC = () => {
             Designed for business teams like yours
           </Typography>
           <Typography as='p' variant='subtitle1' color='gray'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Choose from one of our three affordable pricing packages to get
+            started with Ecommerce Evolution.
           </Typography>
         </Box>
         <Box

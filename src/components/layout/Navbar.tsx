@@ -22,7 +22,6 @@ export const Navbar: FC = () => {
     pricingRef,
     faqRef,
     contactRef,
-    newsletterRef,
   } = useNavbar();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -71,12 +70,7 @@ export const Navbar: FC = () => {
               {
                 name: 'Contact',
                 onClick: () => scrollToElement({ ref: contactRef }),
-                active: isActive(contactRef) && !isActive(newsletterRef, -400),
-              },
-              {
-                name: 'Newsletter',
-                onClick: () => scrollToElement({ ref: newsletterRef }),
-                active: isActive(newsletterRef, -400),
+                active: isActive(contactRef),
               },
             ].map(({ active, name, onClick }) => (
               <NavItem
@@ -199,7 +193,7 @@ function NavBrand({ isTop, closeMobileMenu }: NavBrandProps) {
               color: isTop ? theme.palette.gray[200] : theme.palette.gray[900],
             },
           })}>
-          Brand
+          Evolution
         </Typography>
       </div>
     </div>

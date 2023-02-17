@@ -1,44 +1,66 @@
 import styled from '@emotion/styled';
 import { Color } from '../../theme/types';
 import { Container } from '../ui/Container';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { faGlobe, faScaleBalanced } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCartShopping,
+  faChartSimple,
+  faCreditCard,
+  faGaugeSimpleHigh,
+  faGlobe,
+  faScrewdriverWrench,
+} from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 
-const subtitle = 'Deploy faster';
+const subtitle = 'Our Ecommerce Solutions';
 
-const title = 'Everything you need to deploy your app';
+const title = 'Comprehensive Services to Help You Succeed Online';
 
-const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                      minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat.`;
+const description = `At Ecommerce Evolution, we offer a comprehensive range of ecommerce solutions to help businesses succeed online. Whether you're just starting out or looking to grow your existing ecommerce business, we have the expertise and experience to help you achieve your goals. `;
 
 const features = [
   {
     color: 'primary',
     icon: faGlobe,
-    name: 'Competitve exchange rates',
+    name: 'Website design and development',
     description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Our team of experienced web developers can create a custom ecommerce website that matches your brand and your unique business needs.',
   },
   {
     color: 'secondary',
-    icon: faScaleBalanced,
-    name: 'No hidden fees',
+    icon: faCartShopping,
+    name: 'Shopping cart and checkout optimization',
     description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'We can optimize your shopping cart and checkout process to improve the user experience, reduce cart abandonment rates, and increase conversion rates.',
   },
   {
     color: 'primary',
-    icon: faStar,
-    name: 'Transfers are instant',
+    icon: faCreditCard,
+    name: 'Payment gateway integration',
     description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'We can integrate a variety of payment gateways, including PayPal, Stripe, and Square, to provide a secure and seamless checkout experience.',
+  },
+  {
+    color: 'secondary',
+    icon: faGaugeSimpleHigh,
+    name: 'Search engine optimization',
+    description: `We can help improve your website's search engine rankings and increase traffic by optimizing your website's content, meta tags, and backlinks.`,
+  },
+  {
+    color: 'primary',
+    icon: faChartSimple,
+    name: 'Analytics and reporting',
+    description: `We provide detailed analytics and reporting to help you understand your website's performance, including traffic, sales, and customer behavior.`,
+  },
+  {
+    color: 'secondary',
+    icon: faScrewdriverWrench,
+    name: 'Website maintenance and support',
+    description:
+      'We offer ongoing website maintenance and support to ensure that your website is always up-to-date and functioning properly. ',
   },
 ] as const;
 
@@ -106,7 +128,11 @@ const FeatureList = styled.div(({ theme }) => ({
   },
 }));
 
-const Feature = styled.div({ display: 'grid', gap: '1.25rem' });
+const Feature = styled.div({
+  display: 'grid',
+  gap: '1.25rem',
+  height: 'max-content',
+});
 
 const FeatureName = styled(Typography)();
 FeatureName.defaultProps = { as: 'h3', variant: 'subtitle1' };

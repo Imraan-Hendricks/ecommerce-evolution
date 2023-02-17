@@ -15,15 +15,8 @@ import { useNavbar } from './NavbarContext';
 import { scrollToElement } from '../../utils/scroll-utils';
 
 export const Footer: FC = () => {
-  const {
-    homeRef,
-    featuresRef,
-    overviewRef,
-    pricingRef,
-    faqRef,
-    contactRef,
-    newsletterRef,
-  } = useNavbar();
+  const { homeRef, featuresRef, overviewRef, pricingRef, faqRef, contactRef } =
+    useNavbar();
 
   return (
     <Box
@@ -65,10 +58,6 @@ export const Footer: FC = () => {
             {
               name: 'Contact',
               onClick: () => scrollToElement({ ref: contactRef }),
-            },
-            {
-              name: 'Newsletter',
-              onClick: () => scrollToElement({ ref: newsletterRef }),
             },
           ].map(({ name, onClick }) => (
             <Box as='li' key={name} onClick={onClick}>
@@ -142,7 +131,7 @@ export const Footer: FC = () => {
             textAlign: 'center',
             color: theme.palette.gray[400],
           })}>
-          &copy;2022 Digital Company. Inc. All rights reserved
+          &copy;2023 Ecommerce Evolution. All rights reserved
         </Typography>
       </Container>
     </Box>

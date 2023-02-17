@@ -1,10 +1,11 @@
 import { Button } from '../ui/Button';
 import { FC } from 'react';
+import { scrollToElement } from '../../utils/scroll-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 
 export const Hero: FC = () => {
-  const { homeRef } = useNavbar();
+  const { homeRef, contactRef, pricingRef } = useNavbar();
   return (
     <section
       css={(theme) => ({
@@ -30,7 +31,7 @@ export const Hero: FC = () => {
           [theme.breakpoints.up('xl')]: { textAlign: 'start' },
         })}>
         <Typography as='h2' variant='subtitle2' color='primary'>
-          A TRUSTED DIGITAL AGENCY
+          ECOMMERCE EVOLUTION
         </Typography>
         <Typography as='h1' variant='h2' color='gray'>
           Delivering Premium <br />{' '}
@@ -47,9 +48,8 @@ export const Hero: FC = () => {
             margin: '0 auto',
             [theme.breakpoints.up('xl')]: { margin: '0' },
           })}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim
-          veniam.
+          Transform Your Business and Thrive Online with Ecommerce Evolution -
+          Personalized Ecommerce Solutions for Your Unique Needs
         </Typography>
         <div
           css={(theme) => ({
@@ -60,8 +60,14 @@ export const Hero: FC = () => {
             margin: '0 auto',
             [theme.breakpoints.up('xl')]: { margin: '0' },
           })}>
-          <Button>Get Started</Button>
-          <Button color='white'>View on Github</Button>
+          <Button onClick={() => scrollToElement({ ref: contactRef })}>
+            Get Started
+          </Button>
+          <Button
+            color='white'
+            onClick={() => scrollToElement({ ref: pricingRef })}>
+            See Our Pricing
+          </Button>
         </div>
       </div>
       <div>

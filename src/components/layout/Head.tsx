@@ -11,13 +11,13 @@ export interface HeadProps {
 
 export const Head: FC<HeadProps> = ({
   author = 'Imraan-Hendricks',
-  description = 'Experimenting with styled components using Emotion in react',
+  description = 'Welcome to Ecommerce Evolution, the ultimate ecommerce solution for businesses of all sizes.',
   icon = '/favicon.ico',
-  keywords = 'MongoDB, Next.js, React, Emotion, Styled Components',
+  keywords = 'Ecommerce Evolution, ecommerce solutions, web design and development, shopping cart, payment gateway, succeed online, online store, checkout experience, checkout process, startup business',
   title = 'Site',
 }) => (
   <NextHead>
-    <title>{`Next Emotion Mongo | ${title}`}</title>
+    <title>{`Ecommerce Evolution | ${title}`}</title>
     <link rel='icon' href={icon} />
 
     <meta charSet='utf-8' />

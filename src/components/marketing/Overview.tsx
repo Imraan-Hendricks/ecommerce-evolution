@@ -12,44 +12,28 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 
-const subtitle = 'Rapid development';
+const subtitle = 'Transform Your Business';
 
-const title = 'Use the latest technologies';
+const title = 'Empowering Your Business to Thrive in the Digital World';
 
 const body = {
-  one: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+  one: `At Ecommerce Evolution, we're committed to delivering 
+        exceptional value and results to our clients. We take pride 
+        in providing the highest quality of service, and we're 
+        dedicated to building long-term partnerships with our clients.`,
 
-  two: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+  two: `With Ecommerce Evolution by your side, you can be confident 
+        that you're in good hands, and that your ecommerce business 
+        is in the best possible position to succeed. Whether you're 
+        just starting out or looking to grow your existing ecommerce 
+        business, we have the expertise and experience to help you 
+        achieve your goals. `,
 } as const;
 
 const icons = [
   { key: 'react', color: 'primary', icon: faReact },
   { key: 'css', color: 'secondary', icon: faCss3Alt },
   { key: 'node', color: 'primary', icon: faNodeJs },
-] as const;
-
-const cards = [
-  {
-    title: 'Premium services',
-    color: 'primary',
-    body: 'Lorem ipsum dolor sit amet',
-  },
-  {
-    title: 'Quality assurance',
-    color: 'secondary',
-    body: 'Lorem ipsum dolor sit amet',
-  },
-  {
-    title: 'Maximum security',
-    color: 'primary',
-    body: 'Lorem ipsum dolor sit amet',
-  },
 ] as const;
 
 export const Overview: FC = () => {
@@ -123,7 +107,7 @@ const ContentBlock = styled.div({
 const Subtitle = styled(Typography)();
 Subtitle.defaultProps = { as: 'h2', color: 'primary', variant: 'subtitle1' };
 
-const Title = styled(Typography)();
+const Title = styled(Typography)({ maxWidth: '32rem' });
 Title.defaultProps = { as: 'h1', variant: 'h4' };
 
 const TitleDivider = styled.hr(({ theme }) => ({

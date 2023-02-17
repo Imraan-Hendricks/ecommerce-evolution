@@ -5,19 +5,17 @@ import { useNavbar } from '../layout/NavbarContext';
 
 const faq = [
   {
-    question: 'How do I purchase a membership for the digital agency?',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'What kind of ecommerce solutions do you offer?',
+    answer: `We offer a wide range of services to help businesses succeed online, including website design and development, social media marketing, email campaigns, and more. We'll also provide you with training and resources to help you manage your website on your own if you prefer.`,
   },
   {
-    question: 'Do you provide hosting and deployment as a service?',
+    question: 'How much do your services cost?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Our pricing varies depending on the specific services you require and the scope of your project. We offer transparent pricing and will work with you to create a customized package that fits your budget.',
   },
   {
-    question: 'Do you provide long term support for projects?',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'How long does it take to complete a project?',
+    answer: `The timeline for a project can vary depending on its complexity and the services required. We'll work with you to establish a realistic timeline for your project and keep you informed of our progress along the way.`,
   },
 ];
 

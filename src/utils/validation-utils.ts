@@ -20,12 +20,12 @@ export function validateName(name: any, required = true) {
 }
 
 export function validateEmail(
-  name: any,
+  email: any,
   required?: true
 ): [string, string | undefined];
 
 export function validateEmail(
-  name: any,
+  email: any,
   required?: false
 ): [string | undefined, string | undefined];
 
@@ -43,12 +43,12 @@ export function validateEmail(email: any, required = true) {
 }
 
 export function validateMessage(
-  name: any,
+  message: any,
   required?: true
 ): [string, string | undefined];
 
 export function validateMessage(
-  name: any,
+  message: any,
   required?: false
 ): [string | undefined, string | undefined];
 

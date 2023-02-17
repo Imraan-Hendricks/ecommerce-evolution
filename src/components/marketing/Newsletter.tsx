@@ -1,15 +1,20 @@
-import Link from 'next/link';
 import { Box } from '../ui/Box';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { FC } from 'react';
+import { HelperText } from '../ui/TextFieldHelperText';
 import { Input } from '../ui/TextFieldInput';
 import { TextField } from '../ui/TextField';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useSignupNewsletter } from '../../hooks/useSignupNewsletter';
 
 export const Newsletter: FC = () => {
   const { newsletterRef } = useNavbar();
+
+  const { data, errors, handleOnChange, handleOnSubmit, isLoading, isSuccess } =
+    useSignupNewsletter();
+
   return (
     <section
       ref={newsletterRef}
@@ -33,11 +38,15 @@ export const Newsletter: FC = () => {
           css={(theme) => ({
             color: theme.palette.gray[600],
             maxWidth: '42rem',
+            margin: '0 auto',
           })}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor
-          odio quis sapien dignissim. Sed ut risus et diam iaculis et at orci.
+          Join our mailing list to stay up-to-date on the latest ecommerce
+          trends, news, and insights. Our newsletter is packed with valuable
+          information and exclusive offers.
         </Typography>
         <Box
+          as='form'
+          onSubmit={handleOnSubmit}
           css={(theme) => ({
             display: 'flex',
             justifyContent: 'center',
@@ -47,8 +56,8 @@ export const Newsletter: FC = () => {
               padding: '0 7.5%',
             },
           })}>
-          <TextField css={{ flexGrow: '1' }}>
-            {() => (
+          <TextField css={{ flexGrow: '1', position: 'relative' }}>
+            {({ isFocused, setIsFocused }) => (
               <>
                 <Input
                   css={(theme) => ({
@@ -59,52 +68,44 @@ export const Newsletter: FC = () => {
                     },
                   })}
                   color='primary'
-                  id='ctaEmail'
-                  isError={false}
+                  id='newsletterEmail'
+                  isError={!!errors.email}
                   name='email'
                   placeholder={`Enter email`}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                  value={data.email}
+                  onChange={handleOnChange}
                 />
+                {errors.email && (
+                  <HelperText
+                    css={{
+                      position: 'absolute',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      right: '1rem',
+                    }}
+                    color='primary'
+                    isError={!!errors.email}
+                    isFocused={isFocused}>
+                    {errors.email}
+                  </HelperText>
+                )}
               </>
             )}
           </TextField>
-          <Button css={{ marginLeft: '0.75rem' }}>Subscribe</Button>
+          <Button
+            css={{ marginLeft: '0.75rem' }}
+            disabled={isLoading || isSuccess}
+            color={isSuccess ? 'success' : 'primary'}>
+            {isLoading ? 'Loading...' : isSuccess ? 'Success!' : 'Subscribe'}
+          </Button>
         </Box>
         <Typography
           as='p'
-          variant='body2'
-          css={(theme) => ({ color: theme.palette.gray[600] })}>
-          Instant signup. No credit card required.{' '}
-          <Link href='/'>
-            <Typography
-              as='a'
-              css={(theme) => ({
-                color: theme.palette.primary[600],
-                cursor: 'pointer',
-                '&:hover': {
-                  color: theme.palette.primary[400],
-                },
-              })}
-              color='primary'
-              variant='body2'>
-              Terms of Service
-            </Typography>
-          </Link>{' '}
-          and{' '}
-          <Link href='/'>
-            <Typography
-              as='a'
-              css={(theme) => ({
-                color: theme.palette.primary[600],
-                cursor: 'pointer',
-                '&:hover': {
-                  color: theme.palette.primary[400],
-                },
-              })}
-              color='primary'
-              variant='body2'>
-              Privacy Policy.
-            </Typography>
-          </Link>
+          variant='h6'
+          css={(theme) => ({ color: theme.palette.gray[800] })}>
+          Sign up today and never miss a beat in the world of ecommerce
         </Typography>
       </Container>
     </section>
