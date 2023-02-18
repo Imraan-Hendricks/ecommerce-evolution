@@ -112,7 +112,14 @@ interface DialProps {
 
 function Dial({ href, icon, isVisible }: DialProps) {
   return (
-    <Link href={href}>
+    <Link
+      href={href}
+      css={(theme) => ({
+        height: isVisible ? 'auto' : '0',
+        opacity: isVisible ? '1' : '0',
+        transition: theme.transition.all,
+        transitionDuration: '500ms',
+      })}>
       <Box
         css={(theme) => ({
           visibility: isVisible ? 'visible' : 'hidden',

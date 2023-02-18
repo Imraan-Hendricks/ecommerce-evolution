@@ -1,6 +1,6 @@
 # Ecommerce Evolution
 
-Welcome to Ecommerce Evolution, the ultimate ecommerce solution for businesses of all sizes. Our platform offers a range of customizable features, premium support, and marketing tools to help you create a thriving online store. With Ecommerce Evolution, you can build, manage, and grow your business with ease. Get started today and take your ecommerce journey to the next level.
+Welcome to Ecommerce Evolution, a design demonstration showcasing the use of styled components in React.js.
 
 <br/>
 
