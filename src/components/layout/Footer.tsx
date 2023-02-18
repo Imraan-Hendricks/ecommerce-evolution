@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Box } from '../ui/Box';
 import { Container } from '../ui/Container';
 import {
@@ -15,7 +14,7 @@ import { useNavbar } from './NavbarContext';
 import { scrollToElement } from '../../utils/scroll-utils';
 
 export const Footer: FC = () => {
-  const { homeRef, featuresRef, overviewRef, pricingRef, faqRef, contactRef } =
+  const { homeRef, featuresRef, aboutRef, pricingRef, faqRef, contactRef } =
     useNavbar();
 
   return (
@@ -45,7 +44,7 @@ export const Footer: FC = () => {
             },
             {
               name: 'Overview',
-              onClick: () => scrollToElement({ ref: overviewRef }),
+              onClick: () => scrollToElement({ ref: aboutRef }),
             },
             {
               name: 'Pricing',

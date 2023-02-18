@@ -15,7 +15,7 @@ interface ContextProps {
   ) => boolean;
   homeRef: MutableRefObject<HTMLDivElement | null>;
   featuresRef: MutableRefObject<HTMLDivElement | null>;
-  overviewRef: MutableRefObject<HTMLDivElement | null>;
+  aboutRef: MutableRefObject<HTMLDivElement | null>;
   pricingRef: MutableRefObject<HTMLDivElement | null>;
   faqRef: MutableRefObject<HTMLDivElement | null>;
   contactRef: MutableRefObject<HTMLDivElement | null>;
@@ -36,7 +36,7 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
 }) => {
   const homeRef = useRef<null | HTMLDivElement>(null);
   const featuresRef = useRef<null | HTMLDivElement>(null);
-  const overviewRef = useRef<null | HTMLDivElement>(null);
+  const aboutRef = useRef<null | HTMLDivElement>(null);
   const pricingRef = useRef<null | HTMLDivElement>(null);
   const faqRef = useRef<null | HTMLDivElement>(null);
   const contactRef = useRef<null | HTMLDivElement>(null);
@@ -59,7 +59,7 @@ export const NavbarProvider: FC<PropsWithChildren<unknown>> = ({
         isActive,
         homeRef,
         featuresRef,
-        overviewRef,
+        aboutRef,
         pricingRef,
         faqRef,
         contactRef,

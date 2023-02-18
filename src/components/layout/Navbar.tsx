@@ -18,7 +18,7 @@ export const Navbar: FC = () => {
     isActive,
     homeRef,
     featuresRef,
-    overviewRef,
+    aboutRef,
     pricingRef,
     faqRef,
     contactRef,
@@ -50,12 +50,12 @@ export const Navbar: FC = () => {
               {
                 name: 'Features',
                 onClick: () => scrollToElement({ ref: featuresRef }),
-                active: isActive(featuresRef) && !isActive(overviewRef),
+                active: isActive(featuresRef) && !isActive(aboutRef),
               },
               {
                 name: 'Overview',
-                onClick: () => scrollToElement({ ref: overviewRef }),
-                active: isActive(overviewRef) && !isActive(pricingRef),
+                onClick: () => scrollToElement({ ref: aboutRef }),
+                active: isActive(aboutRef) && !isActive(pricingRef),
               },
               {
                 name: 'Pricing',

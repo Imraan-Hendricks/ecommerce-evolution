@@ -15,7 +15,7 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
     isActive,
     homeRef,
     featuresRef,
-    overviewRef,
+    aboutRef,
     pricingRef,
     faqRef,
     contactRef,
@@ -34,12 +34,12 @@ export function MobileMenu({ isOpen, close }: MobileMenuProps) {
             {
               name: 'Features',
               onClick: () => scrollToElement({ ref: featuresRef }),
-              active: isActive(featuresRef) && !isActive(overviewRef),
+              active: isActive(featuresRef) && !isActive(aboutRef),
             },
             {
               name: 'Overview',
-              onClick: () => scrollToElement({ ref: overviewRef }),
-              active: isActive(overviewRef) && !isActive(pricingRef),
+              onClick: () => scrollToElement({ ref: aboutRef }),
+              active: isActive(aboutRef) && !isActive(pricingRef),
             },
             {
               name: 'Pricing',
