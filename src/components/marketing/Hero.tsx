@@ -1,11 +1,13 @@
 import { Button } from '../ui/Button';
 import { FC } from 'react';
+import { fadeIn } from '@/utils/animation-utils';
 import { scrollToElement } from '../../utils/scroll-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 
 export const Hero: FC = () => {
   const { homeRef, contactRef, pricingRef } = useNavbar();
+
   return (
     <section
       css={(theme) => ({
@@ -28,6 +30,8 @@ export const Hero: FC = () => {
           display: 'grid',
           gap: '1rem',
           textAlign: 'center',
+          animation: '1s ease-in-out forwards',
+          animationName: fadeIn,
           [theme.breakpoints.up('xl')]: { textAlign: 'start' },
         })}>
         <Typography as='h2' variant='subtitle2' color='primary'>
@@ -70,7 +74,11 @@ export const Hero: FC = () => {
           </Button>
         </div>
       </div>
-      <div>
+      <div
+        css={{
+          animation: '1s ease-in-out forwards',
+          animationName: fadeIn,
+        }}>
         <img src='/images/marketing/hero.png' alt='hero' />
       </div>
     </section>

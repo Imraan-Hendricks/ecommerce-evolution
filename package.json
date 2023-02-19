@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-evolution",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "author": "Imraan-Hendricks",
   "description": "Welcome to Ecommerce Evolution, a design demonstration showcasing the use of styled components in React.js",
   "private": true,
@@ -32,6 +32,7 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-intersection-observer": "^9.4.2",
     "typescript": "4.9.5"
   },
   "devDependencies": {

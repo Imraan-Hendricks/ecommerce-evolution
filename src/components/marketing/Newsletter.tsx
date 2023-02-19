@@ -1,6 +1,11 @@
 import { Box } from '../ui/Box';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 import { FC } from 'react';
 import { HelperText } from '../ui/TextFieldHelperText';
 import { Input } from '../ui/TextFieldInput';
@@ -8,9 +13,11 @@ import { TextField } from '../ui/TextField';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 import { useSignupNewsletter } from '../../hooks/useSignupNewsletter';
+import { useInView } from 'react-intersection-observer';
 
 export const Newsletter: FC = () => {
   const { newsletterRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
 
   const { data, errors, handleOnChange, handleOnSubmit, isLoading, isSuccess } =
     useSignupNewsletter();
@@ -23,11 +30,14 @@ export const Newsletter: FC = () => {
         backgroundColor: theme.palette.primary[100],
       })}>
       <Container
+        ref={ref}
         css={{
           display: 'grid',
           justifyContent: 'center',
           gap: '2rem',
           textAlign: 'center',
+          animation: '1s ease-in-out forwards',
+          animationName: inView ? fadeInBottom : fadeOutBottom,
         }}>
         <Typography as='h1' variant='h4'>
           Subscribe to our newsletter and get the latest updates

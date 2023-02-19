@@ -1,6 +1,11 @@
 import { Box } from '../ui/Box';
 import { Container } from '../ui/Container';
 import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
+import {
   faFacebook,
   faInstagram,
   faTwitch,
@@ -12,10 +17,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from './NavbarContext';
 import { scrollToElement } from '../../utils/scroll-utils';
+import { useInView } from 'react-intersection-observer';
 
 export const Footer: FC = () => {
   const { homeRef, featuresRef, aboutRef, pricingRef, faqRef, contactRef } =
     useNavbar();
+
+  const { ref, inView } = useInView(intersectionOptions);
 
   return (
     <Box
@@ -25,7 +33,14 @@ export const Footer: FC = () => {
         backgroundImage:
           'radial-gradient(54.35% 54.35% at 13.82% 7%, #162051 0%, #161B32 100%)',
       }}>
-      <Container css={{ display: 'grid', gap: '2rem' }}>
+      <Container
+        ref={ref}
+        css={{
+          display: 'grid',
+          gap: '2rem',
+          animation: '1s ease-in-out forwards',
+          animationName: inView ? fadeInBottom : fadeOutBottom,
+        }}>
         <Box
           as='ul'
           css={{

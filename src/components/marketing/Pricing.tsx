@@ -3,8 +3,14 @@ import { Box } from '../ui/Box';
 import { Button } from '../ui/Button';
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { Container } from '../ui/Container';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useInView } from 'react-intersection-observer';
 
 const pricing = [
   {
@@ -53,6 +59,8 @@ const pricing = [
 
 export const Pricing: FC = () => {
   const { pricingRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
+
   return (
     <section
       ref={pricingRef}
@@ -60,7 +68,14 @@ export const Pricing: FC = () => {
         padding: '6rem 1.25rem',
         backgroundColor: theme.palette.gray[50],
       })}>
-      <Container css={{ display: 'grid', gap: '4rem' }}>
+      <Container
+        ref={ref}
+        css={{
+          display: 'grid',
+          gap: '4rem',
+          animation: '1s ease-in-out forwards',
+          animationName: inView ? fadeInBottom : fadeOutBottom,
+        }}>
         <Box css={{ display: 'grid', gap: '1rem', textAlign: 'center' }}>
           <Typography as='h2' variant='subtitle2' color='primary'>
             Trusted Worldwide

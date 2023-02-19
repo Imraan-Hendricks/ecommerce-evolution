@@ -3,6 +3,11 @@ import { Box } from '../ui/Box';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { Divider } from '../ui/Divider';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 import { FC } from 'react';
 import { HelperText } from '../ui/TextFieldHelperText';
 import { TextField } from '../ui/TextField';
@@ -12,9 +17,11 @@ import { Label } from '../ui/TextFieldLabel';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
 import { useSendEnquiry } from '../../hooks/useSendEnquiry';
+import { useInView } from 'react-intersection-observer';
 
 export const Contact: FC = () => {
   const { contactRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
 
   const { data, errors, isLoading, isSuccess, handleOnChange, handleOnSubmit } =
     useSendEnquiry();
@@ -26,7 +33,14 @@ export const Contact: FC = () => {
         padding: '6rem 1.25rem',
         backgroundColor: theme.palette.gray[50],
       })}>
-      <Container css={{ display: 'grid', gap: '4rem' }}>
+      <Container
+        ref={ref}
+        css={{
+          display: 'grid',
+          gap: '4rem',
+          animation: '1s ease-in-out forwards',
+          animationName: inView ? fadeInBottom : fadeOutBottom,
+        }}>
         <Box css={{ display: 'grid', gap: '1rem', textAlign: 'center' }}>
           <Typography as='h2' variant='subtitle2' color='primary'>
             Contact Us

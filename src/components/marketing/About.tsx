@@ -11,6 +11,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useInView } from 'react-intersection-observer';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 
 const subtitle = 'Transform Your Business';
 
@@ -38,9 +44,11 @@ const icons = [
 
 export const About: FC = () => {
   const { aboutRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
+
   return (
     <Module ref={aboutRef}>
-      <Layout>
+      <Layout ref={ref} inView={inView}>
         <ContentBlock>
           <Subtitle>{subtitle}</Subtitle>
           <Title>{title}</Title>
@@ -84,11 +92,13 @@ const Module = styled.section({
   padding: '6rem 1.25rem',
 });
 
-const Layout = styled(Container)(({ theme }) => ({
+const Layout = styled(Container)<{ inView: boolean }>(({ theme, inView }) => ({
   display: 'grid',
   alignItems: 'center',
   rowGap: '2rem',
   columnGap: '8rem',
+  animation: '1s ease-in-out forwards',
+  animationName: inView ? fadeInBottom : fadeOutBottom,
   gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
   [theme.breakpoints.up('xl')]: {
     gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
