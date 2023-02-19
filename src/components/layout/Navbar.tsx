@@ -5,6 +5,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { Box } from '../ui/Box';
 import { Container } from '../ui/Container';
+import { fadeIn } from '@/utils/animation-utils';
 import { FC, PropsWithChildren, useState } from 'react';
 import { MobileMenu } from './NavbarMobileMenu';
 import { scrollToElement, scrollToTop } from '../../utils/scroll-utils';
@@ -36,7 +37,11 @@ export const Navbar: FC = () => {
 
   return (
     <Module isTop={isTop} scrollDirection={scrollDirection} scrollY={scrollY}>
-      <Container>
+      <Container
+        css={{
+          animation: '1s ease-in-out forwards',
+          animationName: fadeIn,
+        }}>
         <Nav isTop={isTop}>
           <NavBrand isTop={isTop} closeMobileMenu={closeMobileMenu} />
           <MenuButton isOpen={isOpen} toggleMobileMenu={toggleMobileMenu} />

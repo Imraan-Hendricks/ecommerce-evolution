@@ -2,16 +2,24 @@ import styled from '@emotion/styled';
 import { Box } from '../ui/Box';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Container } from '../ui/Container';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 import { FC, PropsWithChildren } from 'react';
 import { scrollToElement } from '../../utils/scroll-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useInView } from 'react-intersection-observer';
 
 export const Overview: FC = () => {
   const { contactRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
+
   return (
     <Module>
-      <Layout>
+      <Layout ref={ref} inView={inView}>
         <Title>Powering innovation to a diverse range of businesses</Title>
         <Body>
           Our team has experience working with clients in a variety of
@@ -38,11 +46,13 @@ const Module = styled.section({
   padding: '0rem 1.25rem 6rem 1.25rem',
 });
 
-const Layout = styled(Container)(({ theme }) => ({
+const Layout = styled(Container)<{ inView: boolean }>(({ theme, inView }) => ({
   display: 'grid',
   alignItems: 'center',
   rowGap: '2rem',
   columnGap: '8rem',
+  animation: '1s ease-in-out forwards',
+  animationName: inView ? fadeInBottom : fadeOutBottom,
 }));
 
 const Title = styled(Typography)();

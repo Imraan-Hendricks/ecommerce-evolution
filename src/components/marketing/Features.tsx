@@ -9,11 +9,13 @@ import {
   faGlobe,
   faScrewdriverWrench,
 } from '@fortawesome/free-solid-svg-icons';
+import { fadeIn, fadeOut, intersectionOptions } from '@/utils/animation-utils';
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useInView } from 'react-intersection-observer';
 
 const subtitle = 'Our Ecommerce Solutions';
 
@@ -66,9 +68,14 @@ const features = [
 
 export const Features: FC = () => {
   const { featuresRef } = useNavbar();
+  const { ref, inView } = useInView({
+    ...intersectionOptions,
+    initialInView: true,
+  });
+
   return (
     <Module ref={featuresRef}>
-      <Layout>
+      <Layout ref={ref} inView={inView}>
         <Header>
           <Subtitle>{subtitle}</Subtitle>
           <Title>{title}</Title>
@@ -94,7 +101,12 @@ const Module = styled.section(({ theme }) => ({
   padding: '6rem 1.25rem',
 }));
 
-const Layout = styled(Container)({ display: 'grid', gap: '2rem' });
+const Layout = styled(Container)<{ inView: boolean }>(({ inView }) => ({
+  display: 'grid',
+  gap: '2rem',
+  animation: '1s ease-in-out forwards',
+  animationName: inView ? fadeIn : fadeOut,
+}));
 
 const Header = styled.div({ display: 'grid', gap: '2rem' });
 

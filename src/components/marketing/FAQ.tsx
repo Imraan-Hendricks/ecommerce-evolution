@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 import { Container } from '../ui/Container';
+import {
+  fadeInBottom,
+  fadeOutBottom,
+  intersectionOptions,
+} from '@/utils/animation-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import { useInView } from 'react-intersection-observer';
 
 const faq = [
   {
@@ -21,9 +27,11 @@ const faq = [
 
 export function FAQ() {
   const { faqRef } = useNavbar();
+  const { ref, inView } = useInView(intersectionOptions);
+
   return (
     <Module ref={faqRef}>
-      <Layout>
+      <Layout ref={ref} inView={inView}>
         <Header>
           <Subtitle>FAQ</Subtitle>
           <Title>Frequently Asked Questions</Title>
@@ -51,10 +59,12 @@ const Module = styled.section({
   padding: '6rem 1.25rem',
 });
 
-const Layout = styled(Container)({
+const Layout = styled(Container)<{ inView: boolean }>(({ inView }) => ({
   display: 'grid',
   gap: '2rem',
-});
+  animation: '1s ease-in-out forwards',
+  animationName: inView ? fadeInBottom : fadeOutBottom,
+}));
 
 const Header = styled.div({
   display: 'grid',
