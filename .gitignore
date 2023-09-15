@@ -44,3 +44,6 @@ next-env.d.ts
 /cypress/downloads
 /cypress/videos
 /cypress/screenshots
+
+# Local Netlify folder
+.netlify
