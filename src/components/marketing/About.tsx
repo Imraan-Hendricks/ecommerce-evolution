@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import OverviewImage from '../../../public/images/marketing/overview-1024.webp';
 import styled from '@emotion/styled';
 import { Color } from '../../theme/types';
 import { Container } from '../ui/Container';
@@ -56,8 +58,8 @@ export const About: FC = () => {
           <Body>{body.one}</Body>
           <Body>{body.two}</Body>
           <IconList>
-            {icons.map((props) => (
-              <Icon {...props} />
+            {icons.map(({ key, ...rest }) => (
+              <Icon key={key} {...rest} />
             ))}
           </IconList>
         </ContentBlock>
@@ -67,9 +69,9 @@ export const About: FC = () => {
             borderRadius: '0.25rem',
             overflow: 'hidden',
           }}>
-          <img
+          <Image
             css={{ position: 'relative' }}
-            src='/images/marketing/overview.jpg'
+            src={OverviewImage}
             alt='overview'
           />
           <div

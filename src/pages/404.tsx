@@ -1,10 +1,10 @@
-import { Box } from '@/components/ui/Box';
+import { Layout } from '@/components/layout/Layout';
 import { NotFound } from '@/components/marketing/NotFound';
 
-export default function () {
+export default function NotFoundError() {
   return (
-    <Box as='main'>
+    <Layout lean title='404'>
       <NotFound />
-    </Box>
+    </Layout>
   );
 }
