@@ -24,15 +24,16 @@ export const Overview: FC = () => {
         <Body>
           Our team has experience working with clients in a variety of
           industries, including fashion, beauty, home goods, and more. We take
-          pride in helping our clients succeed and we're always thrilled to see
-          them thrive in the competitive world of ecommerce. Contact us today to
-          learn how we can help your business become the next success story.
+          pride in helping our clients succeed and {`we're`} always thrilled to
+          see them thrive in the competitive world of ecommerce. Contact us
+          today to learn how we can help your business become the next success
+          story.
         </Body>
         <Body2>
-          From startups to established businesses, we've helped a diverse range
-          of clients achieve their ecommerce goals and unlock the full potential
-          of their online presence. Contact us today to learn more about how we
-          can help your business thrive.
+          From startups to established businesses, {`we've`} helped a diverse
+          range of clients achieve their ecommerce goals and unlock the full
+          potential of their online presence. Contact us today to learn more
+          about how we can help your business thrive.
         </Body2>
         <ActionLink onClick={() => scrollToElement({ ref: contactRef })}>
           Contact Us

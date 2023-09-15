@@ -44,8 +44,8 @@ export function NotFound() {
             margin: '0 auto',
             [theme.breakpoints.up('xl')]: { margin: '0' },
           })}>
-          We can't seem to find the page you were looking. Try going back to the
-          previous page or follow one of the links below.
+          We {`can't`} seem to find the page you were looking. Try going back to
+          the previous page or follow one of the links below.
         </Typography>
         <div
           css={(theme) => ({

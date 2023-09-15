@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-evolution",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "author": "Imraan-Hendricks",
   "description": "Welcome to Ecommerce Evolution, a design demonstration showcasing the use of styled components in React.js",
   "private": true,

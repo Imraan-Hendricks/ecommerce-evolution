@@ -1,9 +1,11 @@
+import HeroImage from '../../../public/images/marketing/hero-781.webp';
 import { Button } from '../ui/Button';
 import { FC } from 'react';
 import { fadeIn } from '@/utils/animation-utils';
 import { scrollToElement } from '../../utils/scroll-utils';
 import { Typography } from '../ui/Typography';
 import { useNavbar } from '../layout/NavbarContext';
+import Image from 'next/image';
 
 export const Hero: FC = () => {
   const { homeRef, contactRef, pricingRef } = useNavbar();
@@ -79,7 +81,7 @@ export const Hero: FC = () => {
           animation: '1s ease-in-out forwards',
           animationName: fadeIn,
         }}>
-        <img src='/images/marketing/hero.png' alt='hero' />
+        <Image src={HeroImage} alt='hero' unoptimized />
       </div>
     </section>
   );
